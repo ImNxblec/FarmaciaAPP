@@ -10,7 +10,7 @@ namespace FarmaciaAPP
 {
     public class ConexionDB
     {
-        private static string connectionString = "Server=DESKTOP-MV1NMJB\\SQLEXPRESS01;Database=APPFARMACIA;Trusted_Connection=True;";
+        private static string connectionString = "Server=Detpc\\SQLEXPRESS;Database=APPFARMACIA;Trusted_Connection=True;";
 
         // Método para obtener la conexión a la base de datos
         public static SqlConnection ObtenerConexion()
@@ -23,15 +23,15 @@ namespace FarmaciaAPP
         public static Usuario ObtenerUsuario(string username)
         {
             // Cadena de conexión
-            string connectionString = "Server=DESKTOP-MV1NMJB\\SQLEXPRESS01;Database=APPFARMACIA;Trusted_Connection=True;";
+            string connectionString = "Server=Detpc\\SQLEXPRESS;Database=APPFARMACIA;Trusted_Connection=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 // Consulta SQL para obtener los datos del usuario
-                string query = "SELECT Username, Contrasena, Rol FROM Usuarios WHERE Username = @Username";
+                string query = "SELECT NombreUsuario, Nombre, Apellido, Rol, CorreoElectronico, Contrasena FROM Usuarios WHERE NombreUsuario = @Username";
 
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Username", username);  // Usamos 'Username' en lugar de 'NombreUsuario'
+                command.Parameters.AddWithValue("@Username", username);  // Usamos 'NombreUsuario' para que coincida con la base de datos
 
                 try
                 {
@@ -42,12 +42,15 @@ namespace FarmaciaAPP
                     {
                         reader.Read();  // Leer el primer registro (el único, en este caso)
 
-                        // Crear y devolver el objeto Usuario
+                        // Crear y devolver el objeto Usuario con todos los datos
                         return new Usuario
                         {
-                            Username = reader["Username"].ToString(),  // Usamos 'Username' en lugar de 'NombreUsuario'
-                            Contrasena = reader["Contrasena"].ToString(),
-                            Rol = reader["Rol"].ToString()
+                            NombreUsuario = reader["NombreUsuario"].ToString(),
+                            Nombre = reader["Nombre"].ToString(),
+                            Apellido = reader["Apellido"].ToString(),
+                            Rol = reader["Rol"].ToString(),
+                            CorreoElectronico = reader["CorreoElectronico"].ToString(),
+                            Contrasena = reader["Contrasena"].ToString()
                         };
                     }
                     else
@@ -66,6 +69,30 @@ namespace FarmaciaAPP
         }
 
 
+        public static void InsertarReceta(Receta receta)
+        {
+            using (SqlConnection con = new SqlConnection("Server=Detpc\\SQLEXPRESS;Database=APPFARMACIA;Trusted_Connection=True;"))
+            {
+                string query = "INSERT INTO Recetas (Nombre, Apellido, Medicamento1, Medicamento2, Medicamento3, Medicamento4, Medicamento5, Medicamento6, DescripcionCorta, FechaReceta, Correo) " +
+                               "VALUES (@Nombre, @Apellido, @Medicamento1, @Medicamento2, @Medicamento3, @Medicamento4, @Medicamento5, @Medicamento6, @DescripcionCorta, @FechaReceta, @Correo)";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@Nombre", receta.Nombre);
+                cmd.Parameters.AddWithValue("@Apellido", receta.Apellido);
+                cmd.Parameters.AddWithValue("@Medicamento1", receta.Medicamento1);
+                cmd.Parameters.AddWithValue("@Medicamento2", receta.Medicamento2);
+                cmd.Parameters.AddWithValue("@Medicamento3", receta.Medicamento3);
+                cmd.Parameters.AddWithValue("@Medicamento4", receta.Medicamento4);
+                cmd.Parameters.AddWithValue("@Medicamento5", receta.Medicamento5);
+                cmd.Parameters.AddWithValue("@Medicamento6", receta.Medicamento6);
+                cmd.Parameters.AddWithValue("@DescripcionCorta", receta.DescripcionCorta);
+                cmd.Parameters.AddWithValue("@FechaReceta", receta.FechaReceta);
+                cmd.Parameters.AddWithValue("@Correo", receta.Correo);
+
+                con.Open();
+                cmd.ExecuteNonQuery();  // Ejecuta el comando SQL
+            }
+        }
 
         public static bool VerificarConexionBD()
         {
@@ -83,4 +110,5 @@ namespace FarmaciaAPP
             }
         }
     }
+
 }

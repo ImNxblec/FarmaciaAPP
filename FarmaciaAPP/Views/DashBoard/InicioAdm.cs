@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FarmaciaAPP.Views.Facturas;
+using System;
 using System.Windows.Forms;
 
 namespace FarmaciaAPP
@@ -36,6 +37,21 @@ namespace FarmaciaAPP
                 MessageBox.Show("Usuario no encontrado.");
             }
         }
+
+        private void btnGenerarReceta_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario Factura (o Receta) y pasar el usuario
+            Factura facturaForm = new Factura(usuario); // Pasamos el usuario para usar sus datos
+
+            // Ocultar el formulario de InicioAdm
+            this.Hide();
+
+            // Mostrar el formulario de Factura (Receta)
+            facturaForm.Show();
+        }
+
+
     }
 }
+
 
