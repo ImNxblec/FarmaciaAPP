@@ -190,6 +190,7 @@
             this.btnVerRecetas.TabIndex = 0;
             this.btnVerRecetas.Text = "Ver recetas";
             this.btnVerRecetas.UseVisualStyleBackColor = true;
+            this.btnVerRecetas.Click += new System.EventHandler(this.btnVerRecetas_Click);
             // 
             // btnEliminarReceta
             // 

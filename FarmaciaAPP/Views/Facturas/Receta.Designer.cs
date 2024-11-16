@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerFechaReceta = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,23 +38,22 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtMedicamento1 = new System.Windows.Forms.TextBox();
-            this.txtMedicamento2 = new System.Windows.Forms.TextBox();
-            this.txtMedicamento3 = new System.Windows.Forms.TextBox();
-            this.txtMedicamento4 = new System.Windows.Forms.TextBox();
-            this.txtMedicamento5 = new System.Windows.Forms.TextBox();
-            this.txtMedicamento6 = new System.Windows.Forms.TextBox();
-            this.dateTimePickerFechaReceta = new System.Windows.Forms.DateTimePicker();
-            this.richTextBoxIndicaciones = new System.Windows.Forms.RichTextBox();
-            this.Salir = new System.Windows.Forms.Button();
-            this.btnConsultarMedicamento = new System.Windows.Forms.Button();
-            this.Guardar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Guardar = new System.Windows.Forms.Button();
+            this.btnConsultarMedicamento = new System.Windows.Forms.Button();
+            this.Salir = new System.Windows.Forms.Button();
+            this.richTextBoxIndicaciones = new System.Windows.Forms.RichTextBox();
+            this.txtMedicamento6 = new System.Windows.Forms.TextBox();
+            this.txtMedicamento5 = new System.Windows.Forms.TextBox();
+            this.txtMedicamento4 = new System.Windows.Forms.TextBox();
+            this.txtMedicamento3 = new System.Windows.Forms.TextBox();
+            this.txtMedicamento2 = new System.Windows.Forms.TextBox();
+            this.txtMedicamento1 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +74,13 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
+            // 
+            // dateTimePickerFechaReceta
+            // 
+            this.dateTimePickerFechaReceta.Location = new System.Drawing.Point(461, 97);
+            this.dateTimePickerFechaReceta.Name = "dateTimePickerFechaReceta";
+            this.dateTimePickerFechaReceta.Size = new System.Drawing.Size(220, 20);
+            this.dateTimePickerFechaReceta.TabIndex = 16;
             // 
             // label5
             // 
@@ -157,81 +164,59 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestion";
             // 
-            // txtMedicamento1
+            // label10
             // 
-            this.txtMedicamento1.Location = new System.Drawing.Point(130, 42);
-            this.txtMedicamento1.Name = "txtMedicamento1";
-            this.txtMedicamento1.Size = new System.Drawing.Size(100, 20);
-            this.txtMedicamento1.TabIndex = 0;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(44, 175);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(80, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Medicamento 6";
             // 
-            // txtMedicamento2
+            // label9
             // 
-            this.txtMedicamento2.Location = new System.Drawing.Point(130, 68);
-            this.txtMedicamento2.Name = "txtMedicamento2";
-            this.txtMedicamento2.Size = new System.Drawing.Size(100, 20);
-            this.txtMedicamento2.TabIndex = 1;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(44, 149);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Medicamento 5";
             // 
-            // txtMedicamento3
+            // label8
             // 
-            this.txtMedicamento3.Location = new System.Drawing.Point(130, 94);
-            this.txtMedicamento3.Name = "txtMedicamento3";
-            this.txtMedicamento3.Size = new System.Drawing.Size(100, 20);
-            this.txtMedicamento3.TabIndex = 2;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(44, 123);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Medicamento 4";
             // 
-            // txtMedicamento4
+            // label7
             // 
-            this.txtMedicamento4.Location = new System.Drawing.Point(130, 120);
-            this.txtMedicamento4.Name = "txtMedicamento4";
-            this.txtMedicamento4.Size = new System.Drawing.Size(100, 20);
-            this.txtMedicamento4.TabIndex = 3;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(44, 97);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Medicamento 3";
             // 
-            // txtMedicamento5
+            // label6
             // 
-            this.txtMedicamento5.Location = new System.Drawing.Point(130, 146);
-            this.txtMedicamento5.Name = "txtMedicamento5";
-            this.txtMedicamento5.Size = new System.Drawing.Size(100, 20);
-            this.txtMedicamento5.TabIndex = 4;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(44, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Medicamento 2";
             // 
-            // txtMedicamento6
+            // label3
             // 
-            this.txtMedicamento6.Location = new System.Drawing.Point(130, 172);
-            this.txtMedicamento6.Name = "txtMedicamento6";
-            this.txtMedicamento6.Size = new System.Drawing.Size(100, 20);
-            this.txtMedicamento6.TabIndex = 5;
-            // 
-            // dateTimePickerFechaReceta
-            // 
-            this.dateTimePickerFechaReceta.Location = new System.Drawing.Point(461, 97);
-            this.dateTimePickerFechaReceta.Name = "dateTimePickerFechaReceta";
-            this.dateTimePickerFechaReceta.Size = new System.Drawing.Size(220, 20);
-            this.dateTimePickerFechaReceta.TabIndex = 16;
-            // 
-            // richTextBoxIndicaciones
-            // 
-            this.richTextBoxIndicaciones.Location = new System.Drawing.Point(256, 42);
-            this.richTextBoxIndicaciones.Name = "richTextBoxIndicaciones";
-            this.richTextBoxIndicaciones.Size = new System.Drawing.Size(441, 150);
-            this.richTextBoxIndicaciones.TabIndex = 6;
-            this.richTextBoxIndicaciones.Text = "";
-            // 
-            // Salir
-            // 
-            this.Salir.Location = new System.Drawing.Point(622, 214);
-            this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(75, 23);
-            this.Salir.TabIndex = 7;
-            this.Salir.Text = "Salir";
-            this.Salir.UseVisualStyleBackColor = true;
-            // 
-            // btnConsultarMedicamento
-            // 
-            this.btnConsultarMedicamento.Location = new System.Drawing.Point(541, 214);
-            this.btnConsultarMedicamento.Name = "btnConsultarMedicamento";
-            this.btnConsultarMedicamento.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultarMedicamento.TabIndex = 8;
-            this.btnConsultarMedicamento.Text = "Consultar";
-            this.btnConsultarMedicamento.UseVisualStyleBackColor = true;
-            this.btnConsultarMedicamento.Click += new System.EventHandler(this.btnConsultarMedicamento_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(44, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Medicamento 1";
             // 
             // Guardar
             // 
@@ -243,59 +228,75 @@
             this.Guardar.UseVisualStyleBackColor = true;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
-            // label3
+            // btnConsultarMedicamento
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Medicamento 1";
+            this.btnConsultarMedicamento.Location = new System.Drawing.Point(541, 214);
+            this.btnConsultarMedicamento.Name = "btnConsultarMedicamento";
+            this.btnConsultarMedicamento.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultarMedicamento.TabIndex = 8;
+            this.btnConsultarMedicamento.Text = "Consultar";
+            this.btnConsultarMedicamento.UseVisualStyleBackColor = true;
+            this.btnConsultarMedicamento.Click += new System.EventHandler(this.btnConsultarMedicamento_Click);
             // 
-            // label6
+            // Salir
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(44, 71);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Medicamento 2";
+            this.Salir.Location = new System.Drawing.Point(622, 214);
+            this.Salir.Name = "Salir";
+            this.Salir.Size = new System.Drawing.Size(75, 23);
+            this.Salir.TabIndex = 7;
+            this.Salir.Text = "Salir";
+            this.Salir.UseVisualStyleBackColor = true;
+            this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
-            // label7
+            // richTextBoxIndicaciones
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 97);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Medicamento 3";
+            this.richTextBoxIndicaciones.Location = new System.Drawing.Point(256, 42);
+            this.richTextBoxIndicaciones.Name = "richTextBoxIndicaciones";
+            this.richTextBoxIndicaciones.Size = new System.Drawing.Size(441, 150);
+            this.richTextBoxIndicaciones.TabIndex = 6;
+            this.richTextBoxIndicaciones.Text = "";
             // 
-            // label8
+            // txtMedicamento6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(44, 123);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Medicamento 4";
+            this.txtMedicamento6.Location = new System.Drawing.Point(130, 172);
+            this.txtMedicamento6.Name = "txtMedicamento6";
+            this.txtMedicamento6.Size = new System.Drawing.Size(100, 20);
+            this.txtMedicamento6.TabIndex = 5;
             // 
-            // label9
+            // txtMedicamento5
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(44, 149);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 13);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Medicamento 5";
+            this.txtMedicamento5.Location = new System.Drawing.Point(130, 146);
+            this.txtMedicamento5.Name = "txtMedicamento5";
+            this.txtMedicamento5.Size = new System.Drawing.Size(100, 20);
+            this.txtMedicamento5.TabIndex = 4;
             // 
-            // label10
+            // txtMedicamento4
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 175);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 13);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Medicamento 6";
+            this.txtMedicamento4.Location = new System.Drawing.Point(130, 120);
+            this.txtMedicamento4.Name = "txtMedicamento4";
+            this.txtMedicamento4.Size = new System.Drawing.Size(100, 20);
+            this.txtMedicamento4.TabIndex = 3;
+            // 
+            // txtMedicamento3
+            // 
+            this.txtMedicamento3.Location = new System.Drawing.Point(130, 94);
+            this.txtMedicamento3.Name = "txtMedicamento3";
+            this.txtMedicamento3.Size = new System.Drawing.Size(100, 20);
+            this.txtMedicamento3.TabIndex = 2;
+            // 
+            // txtMedicamento2
+            // 
+            this.txtMedicamento2.Location = new System.Drawing.Point(130, 68);
+            this.txtMedicamento2.Name = "txtMedicamento2";
+            this.txtMedicamento2.Size = new System.Drawing.Size(100, 20);
+            this.txtMedicamento2.TabIndex = 1;
+            // 
+            // txtMedicamento1
+            // 
+            this.txtMedicamento1.Location = new System.Drawing.Point(130, 42);
+            this.txtMedicamento1.Name = "txtMedicamento1";
+            this.txtMedicamento1.Size = new System.Drawing.Size(100, 20);
+            this.txtMedicamento1.TabIndex = 0;
             // 
             // Factura
             // 

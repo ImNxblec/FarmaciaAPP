@@ -10,7 +10,7 @@ namespace FarmaciaAPP
 {
     public class ConexionDB
     {
-        private static string connectionString = "Server=Detpc\\SQLEXPRESS;Database=APPFARMACIA;Trusted_Connection=True;";
+        private static string connectionString = "Server=PC19_LAB1\\SQLEXPRESS;Database=APPFARMACIA;Trusted_Connection=True;";
 
         // Método para obtener la conexión a la base de datos
         public static SqlConnection ObtenerConexion()
@@ -23,7 +23,7 @@ namespace FarmaciaAPP
         public static Usuario ObtenerUsuario(string username)
         {
             // Cadena de conexión
-            string connectionString = "Server=Detpc\\SQLEXPRESS;Database=APPFARMACIA;Trusted_Connection=True;";
+            string connectionString = "Server=PC19_LAB1\\SQLEXPRESS;Database=APPFARMACIA;Trusted_Connection=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -71,7 +71,7 @@ namespace FarmaciaAPP
 
         public static void InsertarReceta(Receta receta)
         {
-            using (SqlConnection con = new SqlConnection("Server=Detpc\\SQLEXPRESS;Database=APPFARMACIA;Trusted_Connection=True;"))
+            using (SqlConnection con = new SqlConnection("Server=PC19_LAB1\\SQLEXPRESS;Database=APPFARMACIA;Trusted_Connection=True;"))
             {
                 string query = "INSERT INTO Recetas (Nombre, Apellido, Medicamento1, Medicamento2, Medicamento3, Medicamento4, Medicamento5, Medicamento6, DescripcionCorta, FechaReceta, Correo) " +
                                "VALUES (@Nombre, @Apellido, @Medicamento1, @Medicamento2, @Medicamento3, @Medicamento4, @Medicamento5, @Medicamento6, @DescripcionCorta, @FechaReceta, @Correo)";
@@ -92,6 +92,42 @@ namespace FarmaciaAPP
                 con.Open();
                 cmd.ExecuteNonQuery();  // Ejecuta el comando SQL
             }
+        }
+
+        public static List<Receta> ObtenerRecetas()
+        {
+            List<Receta> recetas = new List<Receta>();
+
+            using (SqlConnection conn = new SqlConnection("Server=PC19_LAB1\\SQLEXPRESS;Database=APPFARMACIA;Trusted_Connection=True;"))
+            {
+                string query = "SELECT * FROM Recetas";
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Receta receta = new Receta
+                    {
+                        Nombre = reader["Nombre"].ToString(),
+                        Apellido = reader["Apellido"].ToString(),
+                        Medicamento1 = reader["Medicamento1"].ToString(),
+                        Medicamento2 = reader["Medicamento2"].ToString(),
+                        Medicamento3 = reader["Medicamento3"].ToString(),
+                        Medicamento4 = reader["Medicamento4"].ToString(),
+                        Medicamento5 = reader["Medicamento5"].ToString(),
+                        Medicamento6 = reader["Medicamento6"].ToString(),
+                        DescripcionCorta = reader["DescripcionCorta"].ToString(),
+                        FechaReceta = Convert.ToDateTime(reader["FechaReceta"]),
+                        Correo = reader["Correo"].ToString()
+                    };
+
+                    recetas.Add(receta);
+                }
+            }
+
+            return recetas;
         }
 
         public static bool VerificarConexionBD()

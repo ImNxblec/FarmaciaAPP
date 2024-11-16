@@ -1,4 +1,5 @@
 ﻿using FarmaciaAPP.Views.Facturas;
+using FarmaciaAPP.Views.Tabla_recetas;
 using System;
 using System.Windows.Forms;
 
@@ -50,7 +51,11 @@ namespace FarmaciaAPP
             facturaForm.Show();
         }
 
-
+        private void btnVerRecetas_Click(object sender, EventArgs e)
+        {
+            frmRecetas frm = new frmRecetas();
+            frm.ShowDialog();
+        }
     }
 }
 

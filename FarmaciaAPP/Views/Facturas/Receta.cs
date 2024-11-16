@@ -94,6 +94,14 @@ namespace FarmaciaAPP.Views.Facturas
         {
             // Código que se ejecuta cuando se carga el formulario
         }
+
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            InicioAdm frmInicioAdm = new InicioAdm(usuario);
+            frmInicioAdm.Show();
+
+        }
     }
 }
 
